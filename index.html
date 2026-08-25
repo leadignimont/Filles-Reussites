@@ -4,10 +4,311 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Filles Réussites</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f3ef;
+      color: #2b2024;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 28px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d8c8c2;
+      background: #fffaf7;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #2b2024;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 7%;
+      background: linear-gradient(
+        120deg,
+        #f6e8e4,
+        #f8f3ef,
+        #ead8d2
+      );
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      margin-bottom: 20px;
+      color: #805c64;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(58px, 10vw, 125px);
+      line-height: 0.9;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #672f3d;
+      color: white;
+      padding: 14px 24px;
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: 48px;
+      margin-bottom: 45px;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    article {
+      background: #fffaf7;
+      padding: 28px;
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #eadbd6;
+    }
+
+    article span {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #916d75;
+    }
+
+    article h2 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: 500;
+      margin: 25px 0;
+    }
+
+    article p {
+      font-size: 15px;
+      color: #5d4e52;
+    }
+
+    .manifesto {
+      background: #672f3d;
+      color: white;
+      text-align: center;
+    }
+
+    .manifesto h2 {
+      font-family: Georgia, serif;
+      font-size: 52px;
+      max-width: 850px;
+      margin: auto;
+      line-height: 1.1;
+    }
+
+    .manifesto p {
+      max-width: 650px;
+      margin: 30px auto 0;
+      font-size: 18px;
+    }
+
+    .newsletter {
+      text-align: center;
+      background: #ead8d2;
+    }
+
+    .newsletter h2 {
+      font-family: Georgia, serif;
+      font-size: 44px;
+    }
+
+    .newsletter p {
+      margin: 20px auto 30px;
+      max-width: 550px;
+    }
+
+    footer {
+      padding: 35px 7%;
+      background: #2b2024;
+      color: #f8f3ef;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 65vh;
+      }
+
+      h1 {
+        font-size: 60px;
+      }
+
+      .manifesto h2,
+      .section-title {
+        font-size: 38px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Filles Réussites</h1>
-  <p>Bienvenue sur mon premier site ✨</p>
+
+  <header>
+    <div class="logo">Filles Réussites</div>
+
+    <nav>
+      <a href="#">Être une femme</a>
+      <a href="#">Carrière</a>
+      <a href="#">Amour</a>
+      <a href="#">Maternité</a>
+      <a href="#">Argent</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Le média de celles qui se cherchent, se construisent et choisissent</div>
+
+        <h1>Filles<br>Réussites</h1>
+
+        <p>
+          Carrière, couple, enfants, argent, féminité :
+          il n'existe pas une seule façon de réussir sa vie.
+        </p>
+
+        <a class="button" href="#articles">Découvrir le média</a>
+      </div>
+    </section>
+
+    <section id="articles">
+      <h2 class="section-title">Les questions qu'on se pose vraiment</h2>
+
+      <div class="articles">
+
+        <article>
+          <span>Maternité</span>
+          <div>
+            <h2>Est-ce qu'il existe vraiment un bon moment pour avoir un enfant ?</h2>
+            <p>
+              Carrière, stabilité, couple, envie : pourquoi la bonne réponse n'est jamais aussi simple.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>Carrière</span>
+          <div>
+            <h2>Peut-on être ambitieuse sans sacrifier le reste ?</h2>
+            <p>
+              Cinq femmes racontent les compromis qu'elles ont faits — et ceux qu'elles ont refusés.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>Être une femme</span>
+          <div>
+            <h2>Et si réussir n'avait rien à voir avec cocher toutes les cases ?</h2>
+            <p>
+              Mariage, enfants, carrière : pourquoi chacune devrait pouvoir écrire sa propre définition.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <h2>Il n'y a pas une bonne façon d'être une fille.</h2>
+      <p>
+        Filles Réussites est né d'une idée simple :
+        une femme n'est jamais « ratée » parce qu'elle ne correspond pas au rôle qu'on avait imaginé pour elle.
+      </p>
+    </section>
+
+    <section class="newsletter">
+      <h2>La lettre des Filles Réussites</h2>
+      <p>
+        Chaque semaine, une question qu'on se pose toutes,
+        des témoignages et des idées pour construire la vie qui nous ressemble.
+      </p>
+
+      <a class="button" href="#">Je m'inscris</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>Filles Réussites © 2026</div>
+    <div>L'ambition, l'amour, la liberté — selon nos propres règles.</div>
+  </footer>
+
 </body>
 </html>
