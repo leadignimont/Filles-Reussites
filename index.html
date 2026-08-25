@@ -8,21 +8,16 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
   <style>
 
     :root {
-      --cream: #f7f1ed;
+      --cream: #f8f3ef;
       --paper: #fffaf7;
       --pink: #ead8d2;
-      --rose: #c99ba5;
-      --burgundy: #6f3040;
-      --dark: #271d20;
+      --burgundy: #713142;
+      --dark: #291f22;
       --grey: #75686b;
       --border: #dfd1cc;
     }
@@ -43,15 +38,16 @@
       font-family: "DM Sans", sans-serif;
     }
 
-    img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
     }
 
     /* HEADER */
@@ -59,16 +55,16 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(255,250,247,0.96);
+      z-index: 100;
+      background: rgba(255,250,247,.96);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
 
-    .topbar {
+    .header-inner {
       max-width: 1450px;
+      min-height: 100px;
       margin: auto;
-      min-height: 105px;
       padding: 0 5%;
       display: flex;
       align-items: center;
@@ -83,56 +79,52 @@
 
     nav {
       display: flex;
-      align-items: center;
-      gap: 32px;
+      gap: 34px;
     }
 
     nav a {
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 1.5px;
+      font-size: 12px;
       font-weight: 500;
-      transition: opacity 0.2s;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
     nav a:hover {
-      opacity: 0.5;
+      color: var(--burgundy);
     }
 
-    .menu-button {
-      display: none;
-    }
 
     /* HERO */
 
     .hero {
       max-width: 1450px;
       margin: auto;
-      padding: 70px 5% 100px;
+      padding: 65px 5% 90px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 70px;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 75px;
       align-items: center;
     }
 
-    .hero-label {
+    .eyebrow {
       color: var(--burgundy);
-      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 3px;
-      font-size: 12px;
+      text-transform: uppercase;
       margin-bottom: 25px;
     }
 
     .hero h1 {
       font-family: "Playfair Display", serif;
+      font-size: clamp(58px, 6vw, 100px);
       font-weight: 500;
-      font-size: clamp(60px, 6.7vw, 108px);
-      line-height: 0.96;
       letter-spacing: -4px;
-      margin-bottom: 35px;
+      line-height: .98;
+      margin-bottom: 32px;
     }
 
     .hero h1 em {
@@ -140,354 +132,316 @@
       font-weight: 500;
     }
 
-    .hero-description {
-      max-width: 590px;
+    .hero-intro {
+      max-width: 610px;
       font-size: 20px;
       line-height: 1.55;
-      color: #43383b;
     }
 
-    .hero-small {
-      max-width: 510px;
-      margin-top: 22px;
+    .hero-secondary {
+      max-width: 570px;
+      margin-top: 18px;
       color: var(--grey);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .hero-image {
-      height: 670px;
+    .hero-photo {
+      height: 660px;
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(140deg, #dbb8be, #f3ddd6 45%, #ba747f);
     }
 
-    .hero-image::before {
-      content: "";
+    .photo-label {
       position: absolute;
-      inset: 8%;
-      border: 1px solid rgba(255,255,255,0.55);
-    }
-
-    .hero-placeholder {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px;
-      color: rgba(39,29,32,0.5);
-      font-family: "Playfair Display", serif;
-      font-size: 25px;
-    }
-
-    .issue-number {
-      position: absolute;
-      bottom: 24px;
-      left: 25px;
+      left: 20px;
+      bottom: 20px;
       background: var(--paper);
-      padding: 10px 15px;
-      font-size: 11px;
+      padding: 11px 16px;
+      font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    /* INTRO STRIP */
 
-    .statement-strip {
+    /* BANDEAU */
+
+    .ticker {
       background: var(--burgundy);
       color: white;
-      padding: 22px 5%;
-      overflow: hidden;
-      white-space: nowrap;
+      padding: 19px 20px;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
-    .statement-strip p {
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-    }
 
     /* SECTIONS */
 
     .section {
       max-width: 1450px;
       margin: auto;
-      padding: 110px 5%;
+      padding: 105px 5%;
     }
 
-    .section-heading {
+    .section-title {
       display: flex;
-      align-items: end;
       justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 55px;
+      align-items: end;
       border-bottom: 1px solid var(--dark);
-      padding-bottom: 22px;
+      padding-bottom: 20px;
+      margin-bottom: 50px;
     }
 
-    .section-heading h2 {
+    .section-title h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 5vw, 67px);
+      font-size: clamp(45px, 5vw, 68px);
       font-weight: 500;
       letter-spacing: -2px;
     }
 
-    .section-heading a {
-      font-size: 12px;
+    .section-title span {
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      padding-bottom: 8px;
-    }
-
-    /* FEATURED */
-
-    .featured-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 0.6fr;
-      gap: 48px;
-    }
-
-    .featured-main .article-image {
-      height: 520px;
-      background:
-        linear-gradient(135deg, #e8cbd0, #bb858e);
-    }
-
-    .article-image {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .image-placeholder {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: "Playfair Display", serif;
-      font-style: italic;
-      color: rgba(39,29,32,0.45);
-      padding: 30px;
-      text-align: center;
     }
 
     .tag {
-      display: inline-block;
+      display: block;
       color: var(--burgundy);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 11px;
-      margin-top: 24px;
-      margin-bottom: 15px;
+      font-size: 10px;
       font-weight: 600;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+      margin: 20px 0 13px;
     }
 
-    .featured-main h3 {
+
+    /* ARTICLES PRINCIPAUX */
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 45px;
+    }
+
+    .main-article-image {
+      height: 510px;
+      overflow: hidden;
+    }
+
+    .main-article h3 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(36px, 4vw, 58px);
+      font-size: clamp(38px, 4vw, 57px);
+      line-height: 1.06;
       font-weight: 500;
-      line-height: 1.05;
-      max-width: 850px;
+      max-width: 900px;
     }
 
-    .article-excerpt {
+    .excerpt {
+      max-width: 760px;
       margin-top: 18px;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--grey);
-      max-width: 720px;
     }
 
-    .featured-side {
+    .side-articles {
       display: flex;
       flex-direction: column;
-      gap: 45px;
+      gap: 40px;
     }
 
     .side-article {
       border-bottom: 1px solid var(--border);
-      padding-bottom: 40px;
-    }
-
-    .side-article:first-child .side-image {
-      background: #d8b4b6;
-    }
-
-    .side-article:nth-child(2) .side-image {
-      background: #d6c3bc;
+      padding-bottom: 35px;
     }
 
     .side-image {
-      height: 200px;
-      margin-bottom: 20px;
+      height: 210px;
+      overflow: hidden;
     }
 
     .side-article h3 {
       font-family: "Playfair Display", serif;
-      font-size: 29px;
+      font-size: 28px;
       line-height: 1.15;
       font-weight: 500;
     }
 
-    /* LATEST */
 
-    .latest-grid {
+    /* 3 ARTICLES */
+
+    .three-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 35px;
     }
 
-    .latest-card {
-      cursor: pointer;
-    }
-
-    .latest-card:hover h3 {
-      color: var(--burgundy);
-    }
-
-    .latest-card:nth-child(1) .latest-image {
-      background: #d5b1b4;
-    }
-
-    .latest-card:nth-child(2) .latest-image {
-      background: #c9b2a8;
-    }
-
-    .latest-card:nth-child(3) .latest-image {
-      background: #e1c8c2;
-    }
-
-    .latest-image {
+    .card-image {
       height: 330px;
+      overflow: hidden;
     }
 
-    .latest-card h3 {
+    .card h3 {
       font-family: "Playfair Display", serif;
-      font-size: 29px;
+      font-size: 28px;
+      line-height: 1.18;
       font-weight: 500;
-      line-height: 1.15;
-      transition: color 0.2s;
     }
+
+
+    /* MANIFESTE */
+
+    .manifesto {
+      background: var(--burgundy);
+      color: white;
+      padding: 125px 5%;
+      text-align: center;
+    }
+
+    .manifesto-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .manifesto-small {
+      color: #e5bac4;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      margin-bottom: 28px;
+    }
+
+    .manifesto h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 6vw, 85px);
+      line-height: 1.03;
+      font-weight: 500;
+    }
+
+    .manifesto p {
+      max-width: 720px;
+      margin: 35px auto 0;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #f1e4e7;
+    }
+
 
     /* PORTRAIT */
 
-    .portrait-section {
+    .portrait {
       background: var(--pink);
     }
 
     .portrait-inner {
       max-width: 1450px;
       margin: auto;
-      padding: 110px 5%;
+      padding: 105px 5%;
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
+      grid-template-columns: .85fr 1.15fr;
       gap: 75px;
       align-items: center;
     }
 
     .portrait-image {
-      height: 620px;
-      background:
-        linear-gradient(140deg, #ad6c79, #e2bcc0 65%, #f1ddd9);
+      height: 610px;
+      overflow: hidden;
     }
 
-    .portrait-kicker {
-      color: var(--burgundy);
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 3px;
-      margin-bottom: 25px;
+    .portrait-text .eyebrow {
+      margin-bottom: 20px;
     }
 
-    .portrait-content h2 {
+    .portrait-text h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(50px, 5vw, 77px);
+      font-size: clamp(48px, 5vw, 75px);
+      line-height: 1.02;
       font-weight: 500;
-      line-height: 1;
       letter-spacing: -3px;
     }
 
-    .portrait-quote {
+    .quote {
       font-family: "Playfair Display", serif;
       font-style: italic;
       font-size: 27px;
-      line-height: 1.35;
-      margin: 36px 0;
-      max-width: 700px;
+      line-height: 1.4;
+      margin: 32px 0;
+      max-width: 680px;
     }
 
-    .portrait-content p {
-      max-width: 650px;
+    .portrait-text p {
+      color: #55474b;
       line-height: 1.7;
-      color: #514448;
+      max-width: 650px;
     }
 
-    .read-link {
+    .link {
       display: inline-block;
-      margin-top: 35px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
+      margin-top: 32px;
       border-bottom: 1px solid var(--dark);
       padding-bottom: 5px;
-    }
-
-    /* ORIGIN */
-
-    .origin {
-      background: var(--dark);
-      color: var(--paper);
-    }
-
-    .origin-inner {
-      max-width: 1150px;
-      margin: auto;
-      padding: 125px 5%;
-      text-align: center;
-    }
-
-    .origin-small {
+      font-size: 11px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      color: #d5afb7;
-      margin-bottom: 35px;
     }
 
-    .origin h2 {
+
+    /* HISTOIRE */
+
+    .story {
+      background: var(--paper);
+      padding: 120px 5%;
+    }
+
+    .story-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .story-image {
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .story h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(50px, 6vw, 84px);
+      font-size: clamp(45px,5vw,68px);
       font-weight: 500;
       line-height: 1;
-      margin-bottom: 48px;
+      margin-bottom: 30px;
     }
 
-    .origin-story {
-      max-width: 740px;
-      margin: auto;
+    .story-text {
       font-family: "Playfair Display", serif;
-      font-size: 25px;
+      font-size: 24px;
       line-height: 1.55;
     }
 
-    .origin-highlight {
-      color: #e6bbc4;
+    .story-text strong {
+      color: var(--burgundy);
       font-style: italic;
+      font-weight: 500;
     }
 
-    .origin-final {
-      margin-top: 42px;
-      font-size: 16px;
+    .story-small {
+      margin-top: 25px;
+      font-family: "DM Sans", sans-serif;
+      color: var(--grey);
+      font-size: 15px;
       line-height: 1.7;
-      color: #d5c7ca;
     }
+
 
     /* NEWSLETTER */
 
     .newsletter {
-      padding: 125px 5%;
+      padding: 120px 5%;
       text-align: center;
-      background: var(--paper);
     }
 
     .newsletter-inner {
@@ -495,43 +449,33 @@
       margin: auto;
     }
 
-    .newsletter-kicker {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      color: var(--burgundy);
-      margin-bottom: 25px;
-    }
-
     .newsletter h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(48px, 6vw, 78px);
+      font-size: clamp(47px,5vw,72px);
       font-weight: 500;
-      line-height: 1;
+      line-height: 1.05;
     }
 
     .newsletter p {
-      margin: 28px auto 35px;
-      max-width: 600px;
+      max-width: 620px;
+      margin: 25px auto 35px;
       color: var(--grey);
       line-height: 1.7;
     }
 
     .newsletter-form {
-      display: flex;
-      max-width: 600px;
+      max-width: 610px;
       margin: auto;
+      display: flex;
     }
 
     .newsletter input {
-      width: 100%;
+      flex: 1;
+      padding: 19px;
       border: 1px solid var(--dark);
-      border-right: none;
       background: transparent;
-      padding: 19px 20px;
-      outline: none;
       font-family: inherit;
-      font-size: 14px;
+      outline: none;
     }
 
     .newsletter button {
@@ -541,16 +485,16 @@
       padding: 0 30px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-size: 11px;
       cursor: pointer;
     }
+
 
     /* FOOTER */
 
     footer {
-      background: var(--burgundy);
+      background: var(--dark);
       color: white;
-      padding: 60px 5%;
+      padding: 55px 5%;
     }
 
     .footer-inner {
@@ -559,121 +503,89 @@
       display: flex;
       justify-content: space-between;
       align-items: end;
-      gap: 50px;
     }
 
     .footer-logo {
       font-family: "Playfair Display", serif;
-      font-size: 38px;
+      font-size: 35px;
     }
 
-    .footer-tagline {
+    .footer-inner p {
       margin-top: 8px;
-      opacity: 0.7;
+      color: #bfaeb3;
       font-size: 13px;
     }
 
-    .footer-links {
-      text-align: right;
+    .copyright {
       font-size: 12px;
-      line-height: 2;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      color: #bfaeb3;
     }
 
-    /* RESPONSIVE */
 
-    @media (max-width: 900px) {
+    /* MOBILE */
 
-      .topbar {
-        min-height: 80px;
-      }
+    @media(max-width:900px) {
 
       nav {
         display: none;
       }
 
-      .menu-button {
-        display: block;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 11px;
-      }
-
       .hero-grid,
-      .featured-grid,
-      .portrait-inner {
+      .articles-grid,
+      .portrait-inner,
+      .story-inner {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 45px;
+      .three-grid {
+        grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        letter-spacing: -2px;
+      .hero-photo {
+        height: 520px;
       }
 
-      .hero-image {
-        height: 480px;
-      }
-
-      .featured-side {
+      .side-articles {
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
 
-      .latest-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .latest-image {
-        height: 420px;
-      }
-
-      .portrait-image {
-        height: 520px;
-      }
-
     }
 
-    @media (max-width: 600px) {
+    @media(max-width:600px) {
+
+      .header-inner {
+        min-height: 75px;
+      }
 
       .logo {
         font-size: 24px;
       }
 
+      .hero {
+        padding: 50px 6% 70px;
+      }
+
       .hero h1 {
         font-size: 55px;
+        letter-spacing: -2px;
       }
 
-      .hero-description {
-        font-size: 17px;
-      }
-
-      .hero-image {
-        height: 410px;
+      .hero-photo {
+        height: 430px;
       }
 
       .section {
         padding: 75px 6%;
       }
 
-      .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .featured-side {
+      .side-articles {
         grid-template-columns: 1fr;
       }
 
-      .featured-main .article-image {
+      .main-article-image,
+      .card-image {
         height: 350px;
-      }
-
-      .side-image {
-        height: 270px;
       }
 
       .portrait-inner {
@@ -681,16 +593,20 @@
       }
 
       .portrait-image {
-        height: 440px;
+        height: 450px;
+      }
+
+      .story {
+        padding: 75px 6%;
+      }
+
+      .story-image {
+        height: 400px;
       }
 
       .newsletter-form {
         flex-direction: column;
         gap: 10px;
-      }
-
-      .newsletter input {
-        border-right: 1px solid var(--dark);
       }
 
       .newsletter button {
@@ -700,10 +616,7 @@
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .footer-links {
-        text-align: left;
+        gap: 25px;
       }
 
     }
@@ -711,407 +624,437 @@
   </style>
 </head>
 
+
 <body>
 
-  <header>
-    <div class="topbar">
 
-      <a href="#" class="logo">
-        Filles Réussites
+<header>
+
+  <div class="header-inner">
+
+    <a href="#" class="logo">
+      Filles Réussites
+    </a>
+
+    <nav>
+      <a href="#femme">Être une femme</a>
+      <a href="#articles">Carrière</a>
+      <a href="#articles">Amour</a>
+      <a href="#articles">Maternité</a>
+      <a href="#articles">Argent</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        Le média de celles qui se cherchent, se construisent et choisissent
+      </div>
+
+      <h1>
+        Et si on arrêtait de chercher à <em>tout réussir ?</em>
+      </h1>
+
+      <p class="hero-intro">
+        Carrière, couple, enfants, argent, féminité :
+        il n'existe pas une seule façon de réussir sa vie.
+      </p>
+
+      <p class="hero-secondary">
+        Un média pour parler sans filtre des choix, des contradictions
+        et des grandes questions qui accompagnent nos vingt et trente ans.
+      </p>
+
+    </div>
+
+
+    <div class="hero-photo">
+
+      <img
+        src="hero.jpg"
+        alt="Femme prenant un café près d'une fenêtre"
+      >
+
+      <div class="photo-label">
+        Filles Réussites — Édition 01
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="ticker">
+  Carrière • Amour • Maternité • Argent • Féminité • Ambition • Liberté • Choix
+</div>
+
+
+
+<!-- ARTICLES -->
+
+<section class="section" id="articles">
+
+  <div class="section-title">
+
+    <h2>Les questions qu'on se pose vraiment</h2>
+
+    <span>À la une</span>
+
+  </div>
+
+
+  <div class="articles-grid">
+
+
+    <article class="main-article">
+
+      <div class="main-article-image">
+        <img src="maternite.jpg" alt="Mère avec son enfant">
+      </div>
+
+      <span class="tag">
+        Maternité
+      </span>
+
+      <h3>
+        Est-ce qu'il existe vraiment un bon moment pour avoir un enfant ?
+      </h3>
+
+      <p class="excerpt">
+        Carrière, stabilité, couple, envie, peur de perdre sa liberté...
+        Pourquoi une question aussi intime finit-elle par ressembler
+        à une décision stratégique ?
+      </p>
+
+    </article>
+
+
+    <div class="side-articles">
+
+
+      <article class="side-article">
+
+        <div class="side-image">
+          <img src="carriere.jpg" alt="Femme travaillant">
+        </div>
+
+        <span class="tag">
+          Carrière
+        </span>
+
+        <h3>
+          Peut-on être ambitieuse sans sacrifier le reste ?
+        </h3>
+
+      </article>
+
+
+      <article class="side-article">
+
+        <div class="side-image">
+          <img src="couple.jpg" alt="Couple dans un café">
+        </div>
+
+        <span class="tag">
+          Amour
+        </span>
+
+        <h3>
+          Peut-on être indépendante et aimer qu'on prenne soin de nous ?
+        </h3>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- AUTRES ARTICLES -->
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>À lire aussi</h2>
+
+    <span>Nos conversations</span>
+
+  </div>
+
+
+  <div class="three-grid">
+
+
+    <article class="card">
+
+      <div class="card-image">
+        <img src="lifestyle.jpg" alt="Carnet et café">
+      </div>
+
+      <span class="tag">
+        Être une femme
+      </span>
+
+      <h3>
+        Et si réussir n'avait rien à voir avec cocher toutes les cases ?
+      </h3>
+
+    </article>
+
+
+    <article class="card">
+
+      <div class="card-image">
+        <img src="carriere.jpg" alt="Femme dans sa vie professionnelle">
+      </div>
+
+      <span class="tag">
+        Argent
+      </span>
+
+      <h3>
+        À 30 ans, combien devrait-on vraiment avoir de côté ?
+      </h3>
+
+    </article>
+
+
+    <article class="card">
+
+      <div class="card-image">
+        <img src="couple.jpg" alt="Jeune couple">
+      </div>
+
+      <span class="tag">
+        Couple
+      </span>
+
+      <h3>
+        Couple, carrière, projets : est-ce qu'on doit forcément avancer au même rythme ?
+      </h3>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- MANIFESTE -->
+
+<section class="manifesto" id="femme">
+
+  <div class="manifesto-inner">
+
+    <div class="manifesto-small">
+      Notre manifeste
+    </div>
+
+    <h2>
+      Il n'y a pas une bonne façon d'être une fille.
+    </h2>
+
+    <p>
+      On peut vouloir une grande carrière et une famille.
+      Être indépendante et aimer être entourée.
+      Vouloir gagner beaucoup d'argent et avoir du temps.
+      Changer d'avis. Ne pas tout savoir à 25 ans.
+      Et surtout, décider soi-même de ce que signifie réussir.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- PORTRAIT -->
+
+<section class="portrait">
+
+  <div class="portrait-inner">
+
+
+    <div class="portrait-image">
+      <img src="portrait.jpg" alt="Portrait d'une femme">
+    </div>
+
+
+    <div class="portrait-text">
+
+      <div class="eyebrow">
+        Portrait — Fille Réussite
+      </div>
+
+      <h2>
+        Une vie qui ne ressemble qu'à elle.
+      </h2>
+
+      <div class="quote">
+        « J'ai arrêté de me demander si je faisais les bons choix.
+        Je me demande maintenant s'ils sont bons pour moi. »
+      </div>
+
+      <p>
+        Chaque mois, une femme raconte sa trajectoire sans version
+        parfaitement maîtrisée : son rapport à l'ambition, l'argent,
+        l'amour, la maternité, les compromis, les regrets et les choix
+        dont elle est fière.
+      </p>
+
+      <a href="#" class="link">
+        Découvrir son histoire →
       </a>
 
-      <nav>
-        <a href="#articles">Nous</a>
-        <a href="#articles">Carrière</a>
-        <a href="#articles">Amour</a>
-        <a href="#articles">Famille</a>
-        <a href="#articles">Argent</a>
-      </nav>
-
-      <div class="menu-button">
-        Menu
-      </div>
-
     </div>
-  </header>
 
 
-  <main>
+  </div>
 
-    <!-- HERO -->
-
-    <section class="hero">
-
-      <div class="hero-grid">
-
-        <div>
-
-          <div class="hero-label">
-            Le média des femmes qui construisent leur propre réussite
-          </div>
-
-          <h1>
-            On nous avait dit qu'on pouvait <em>tout avoir.</em>
-          </h1>
-
-          <p class="hero-description">
-            La carrière. L'amour. Les enfants. L'argent. La liberté.
-            Et nous, au milieu de tout ça.
-          </p>
-
-          <p class="hero-small">
-            Filles Réussites parle des grandes questions qu'on commence
-            à se poser à 20, 25, 30 ans — sans prétendre avoir une seule bonne réponse.
-          </p>
-
-        </div>
+</section>
 
 
-        <div class="hero-image">
 
-          <div class="hero-placeholder">
-            Ici, une grande photo éditoriale
-          </div>
+<!-- HISTOIRE DU NOM -->
 
-          <div class="issue-number">
-            Édition 01 — 2026
-          </div>
+<section class="story">
 
-        </div>
+  <div class="story-inner">
+
+
+    <div class="story-image">
+      <img src="lifestyle.jpg" alt="Carnet Filles Réussites">
+    </div>
+
+
+    <div>
+
+      <div class="eyebrow">
+        L'histoire derrière le nom
+      </div>
+
+      <h2>
+        Pourquoi « Filles Réussites » ?
+      </h2>
+
+      <div class="story-text">
+
+        Un jour, quelqu'un a qualifié ma sœur de
+        <strong>« garçon manqué ».</strong>
+
+        <br><br>
+
+        Ma mère a simplement répondu :
+
+        <br><br>
+
+        <strong>« Non. Fille réussie. »</strong>
 
       </div>
 
-    </section>
-
-
-    <div class="statement-strip">
-      <p>
-        Carrière • Couple • Famille • Argent • Féminité • Liberté • Ambition • Choix
+      <p class="story-small">
+        Une petite phrase devenue une conviction :
+        une femme n'est jamais « ratée » parce qu'elle ne correspond
+        pas au rôle qu'on avait imaginé pour elle.
       </p>
+
     </div>
 
 
-    <!-- À LA UNE -->
+  </div>
 
-    <section class="section" id="articles">
+</section>
 
-      <div class="section-heading">
 
-        <h2>À la une</h2>
 
-        <a href="#">
-          Tous les articles →
-        </a>
+<!-- NEWSLETTER -->
 
-      </div>
+<section class="newsletter">
 
+  <div class="newsletter-inner">
 
-      <div class="featured-grid">
+    <div class="eyebrow">
+      À lire avec son café du dimanche
+    </div>
 
-        <article class="featured-main">
+    <h2>
+      La Lettre des Filles Réussites
+    </h2>
 
-          <div class="article-image">
-            <div class="image-placeholder">
-              Photo principale
-            </div>
-          </div>
+    <p>
+      Chaque semaine, une question qu'on se pose vraiment,
+      plusieurs points de vue et des histoires de femmes
+      qui construisent leur vie à leur façon.
+    </p>
 
-          <span class="tag">
-            Famille & carrière
-          </span>
 
-          <h3>
-            Est-ce qu'il existe vraiment un bon moment pour avoir un enfant ?
-          </h3>
+    <div class="newsletter-form">
 
-          <p class="article-excerpt">
-            À 25 ans, on nous dit qu'on a le temps. À 30, la question commence
-            à revenir partout. Entre carrière, couple, stabilité et envie :
-            comment choisir sans avoir l'impression de sacrifier quelque chose ?
-          </p>
+      <input
+        type="email"
+        placeholder="Ton adresse e-mail"
+      >
 
-        </article>
-
-
-        <div class="featured-side">
-
-          <article class="side-article">
-
-            <div class="side-image">
-              <div class="image-placeholder">
-                Photo
-              </div>
-            </div>
-
-            <span class="tag">
-              Carrière
-            </span>
-
-            <h3>
-              Peut-on être très ambitieuse et vouloir une vie douce ?
-            </h3>
-
-          </article>
-
-
-          <article class="side-article">
-
-            <div class="side-image">
-              <div class="image-placeholder">
-                Photo
-              </div>
-            </div>
-
-            <span class="tag">
-              Amour
-            </span>
-
-            <h3>
-              Je gagne plus que mon conjoint. Pourquoi est-ce encore un sujet ?
-            </h3>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- DERNIERS ARTICLES -->
-
-    <section class="section">
-
-      <div class="section-heading">
-
-        <h2>À lire aussi</h2>
-
-        <a href="#">
-          Voir plus →
-        </a>
-
-      </div>
-
-
-      <div class="latest-grid">
-
-        <article class="latest-card">
-
-          <div class="latest-image">
-            <div class="image-placeholder">
-              Photo
-            </div>
-          </div>
-
-          <span class="tag">
-            Être une femme
-          </span>
-
-          <h3>
-            Et si réussir n'avait rien à voir avec cocher toutes les cases ?
-          </h3>
-
-        </article>
-
-
-        <article class="latest-card">
-
-          <div class="latest-image">
-            <div class="image-placeholder">
-              Photo
-            </div>
-          </div>
-
-          <span class="tag">
-            Argent
-          </span>
-
-          <h3>
-            À 30 ans, combien devrait-on vraiment avoir de côté ?
-          </h3>
-
-        </article>
-
-
-        <article class="latest-card">
-
-          <div class="latest-image">
-            <div class="image-placeholder">
-              Photo
-            </div>
-          </div>
-
-          <span class="tag">
-            Couple
-          </span>
-
-          <h3>
-            Peut-on être indépendante et aimer qu'on prenne soin de nous ?
-          </h3>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- PORTRAIT -->
-
-    <section class="portrait-section">
-
-      <div class="portrait-inner">
-
-        <div class="portrait-image">
-          <div class="image-placeholder">
-            Portrait d'une femme
-          </div>
-        </div>
-
-
-        <div class="portrait-content">
-
-          <div class="portrait-kicker">
-            Portrait — Fille Réussite
-          </div>
-
-          <h2>
-            Une vie qui ne ressemble qu'à elle.
-          </h2>
-
-          <div class="portrait-quote">
-            « J'ai arrêté de me demander si je faisais les bons choix.
-            Je me demande maintenant s'ils sont bons pour moi. »
-          </div>
-
-          <p>
-            Chaque mois, Filles Réussites rencontre une femme et lui pose
-            les questions qu'on pose rarement : argent, ambition, couple,
-            maternité, regrets, choix et définition personnelle de la réussite.
-          </p>
-
-          <a class="read-link" href="#">
-            Découvrir son histoire →
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- HISTOIRE DU NOM -->
-
-    <section class="origin">
-
-      <div class="origin-inner">
-
-        <div class="origin-small">
-          Pourquoi ce nom ?
-        </div>
-
-        <h2>
-          Filles Réussites.
-        </h2>
-
-        <div class="origin-story">
-
-          Un jour, quelqu'un a qualifié ma sœur de
-          <span class="origin-highlight">« garçon manqué ».</span>
-
-          <br><br>
-
-          Ma mère a répondu :
-
-          <br><br>
-
-          <span class="origin-highlight">
-            « Non. Fille réussie. »
-          </span>
-
-        </div>
-
-        <p class="origin-final">
-          C'est de là que tout est parti.
-          Parce qu'il n'existe pas une bonne façon d'être une femme,
-          ni une seule définition d'une vie réussie.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- NEWSLETTER -->
-
-    <section class="newsletter">
-
-      <div class="newsletter-inner">
-
-        <div class="newsletter-kicker">
-          À lire avec son café du dimanche
-        </div>
-
-        <h2>
-          La Lettre des Filles Réussites
-        </h2>
-
-        <p>
-          Une question, plusieurs points de vue, des témoignages et des
-          conversations qu'on aimerait avoir plus souvent entre femmes.
-        </p>
-
-        <form class="newsletter-form">
-
-          <input
-            type="email"
-            placeholder="ton@email.com"
-          >
-
-          <button type="button">
-            Je m'inscris
-          </button>
-
-        </form>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <footer>
-
-    <div class="footer-inner">
-
-      <div>
-
-        <div class="footer-logo">
-          Filles Réussites
-        </div>
-
-        <div class="footer-tagline">
-          Réussir, mais selon ses propres règles.
-        </div>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <a href="#">Instagram</a><br>
-        <a href="#">À propos</a><br>
-        <a href="#">Contact</a><br>
-        <span>© 2026 Filles Réussites</span>
-
-      </div>
+      <button>
+        Je m'inscris
+      </button>
 
     </div>
 
-  </footer>
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+
+      <div class="footer-logo">
+        Filles Réussites
+      </div>
+
+      <p>
+        L'ambition, l'amour et la liberté — selon nos propres règles.
+      </p>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Filles Réussites
+    </div>
+
+  </div>
+
+</footer>
 
 
 </body>
